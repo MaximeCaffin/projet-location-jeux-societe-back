@@ -1,0 +1,36 @@
+{% extends '/back/base.html.twig' %}
+
+{% block title %}Liste des locations
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="my-4">Liste des locations</h1>
+		<a href="{{ path('app_back_rent_create') }}" class="btn btn-success mb-3">Nouvelle réservation</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Utilisateur</th>
+					<th>Date de début</th>
+					<th>Date de fin</th>
+					<th>Statut</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			{% for rent in rentList %}
+				<tr>
+					<td>{{ rent.user.firstname }}
+						{{ rent.user.lastname }}</td>
+					<td>{{ rent.dateDebut|date('Y-m-d H:i:s') }}</td>
+					<td>{{ rent.dateFin|date('Y-m-d H:i:s') }}</td>
+					<td class="{{ rent.Status == 'Pending' ? 'pending' : '' }}">{{ rent.Status }}</td>
+					<td>
+						<a href="{{ path('app_back_rent_read', {'id': rent.id}) }}" class="btn btn-primary btn-sm">Voir</a>
+						<a href="{{ path('app_back_rent_edit', {'id': rent.id}) }}" class="btn btn-secondary btn-sm">Modifier</a>
+						<a href="{{ path('app_back_rent_delete', {'id': rent.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>{% endblock %}

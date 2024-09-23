@@ -1,0 +1,38 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Messagerie{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Messagerie</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Entreprise</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                    <tr>
+                        <td>{{ contact.id }}</td>
+                        <td>{{ contact.firstname }}</td>
+                        <td>{{ contact.name }}</td>
+                        <td>{{ contact.company }}</td>
+                        <td>{{ contact.mail }}</td>
+                        <td>{{ contact.message }}</td>
+                        <td>
+                        <a href="{{ path('app_back_contact_delete', {'id': contact.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

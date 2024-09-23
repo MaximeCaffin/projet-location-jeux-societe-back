@@ -1,0 +1,25 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Détails du jeu{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Détails du jeu</h1>
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">{{ game.Name }}</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Description :</strong> {{ game.Description }}</p>
+                <p><strong>Prix :</strong> {{ game.Price }}</p>
+                <p><strong>Catégorie :</strong> {{ game.category.name }}</p>
+                <p><strong>Statut :</strong> {{ game.Status }}</p>
+                <p><strong>Quantité :</strong> {{ game.quantity }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{ path('app_back_game_edit', {'id': game.id}) }}" class="btn btn-primary">Modifier</a>
+                <a href="{{ path('app_back_game_delete', {'id': game.id}) }}" class="btn btn-danger">Supprimer</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Liste des jeux
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="my-4">Liste des jeux</h1>
+		<a href="{{ path('app_back_game_create') }}" class="btn btn-success mb-3">Nouveau jeu</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Description</th>
+					<th>Prix</th>
+					<th>Catégorie</th>
+					<th>Statut</th>
+					<th>Quantité</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for game in gameList %}
+					<tr>
+						<td>{{ game.name }}</td>
+						<td>{{ game.description }}</td>
+						<td>{{ game.price }}</td>
+						<td>{{ game.category.name }}</td>
+						<td>{{ game.status }}</td>
+						<td>{{ game.quantity }}</td>
+						<td>
+							<a href="{{ path('app_back_game_read', {'id': game.id}) }}" class="btn btn-primary btn-sm">Voir</a>
+							<a href="{{ path('app_back_game_edit', {'id': game.id}) }}" class="btn btn-secondary btn-sm">Modifier</a>
+							<a href="{{ path('app_back_game_delete', {'id': game.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

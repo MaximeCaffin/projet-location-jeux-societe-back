@@ -1,0 +1,30 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Détails de la location{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Détails de la location</h1>
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Location #{{ rent.id }}</h5>
+            </div>
+            <div class="card-body">
+                <p><strong>Utilisateur :</strong> {{ rent.user.firstname }} {{ rent.user.lastname }}</p>
+                <p><strong>Date de début :</strong> {{ rent.dateDebut|date('Y-m-d H:i:s') }}</p>
+                <p><strong>Date de fin :</strong> {{ rent.dateFin|date('Y-m-d H:i:s') }}</p>
+                <p><strong>Statut :</strong> {{ rent.status }}</p>
+                <p><strong>Jeux loués :</strong></p>
+                <ul>
+                    {% for contentRent in rent.contentRents %}
+                        <li>{{ contentRent.game.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="{{ path('app_back_rent_edit', {'id': rent.id}) }}" class="btn btn-primary">Modifier</a>
+                <a href="{{ path('app_back_rent_delete', {'id': rent.id}) }}" class="btn btn-danger">Supprimer</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+/* Réinitialisation du CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  
+  /* Style pour les images */
+  .myimg {
+    border: 2px solid black;
+    width: 200px;
+    border-radius: 50%;
+  }
+  
+  /* Style pour le fond */
+  .background {
+    background-color: lightcoral;
+    z-index: 1000;
+  }
+  
+  /* Style pour l'en-tête */
+  .header {
+    color: white;
+    align-items: center;
+  }
+  
+  /* Style pour le pied de page */
+  .footer {
+    background-color: rgb(32, 34, 36); 
+  }
+  
+  /* Style pour les boutons */
+  .bt {
+    border: none;
+    background-color: rgb(139, 139, 139); 
+  }
+  
+  /* Style pour les icônes */
+  .icon {
+    padding: 2px 4px 2px 4px;
+  }
+  
+  /* Style pour le texte */
+  .text {
+    color: #b9b9b9;
+    padding-bottom: 5px;
+  }
+  
+  /* Style pour le bas de page */
+  .bottom {
+    text-align: center;
+  }
+ 
+  /* Style pour le bouton Back */
+  .contact-form .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+  
+  .contact-form .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  /* Style pour l'espacement entre les boutons */
+  .contact-form .btn {
+    margin-top: 10px;
+  }
+  

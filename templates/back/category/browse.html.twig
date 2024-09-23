@@ -1,0 +1,31 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}Liste des catégories
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="my-4">Liste des catégories</h1>
+		<a href="{{ path('app_back_category_create') }}" class="btn btn-success mb-3">Nouvelle catégorie</a>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for category in categories %}
+					<tr>
+						<td>{{ category.name }}</td>
+						<td>
+							<a href="{{ path('app_back_category_read', {'id': category.id}) }}" class="btn btn-primary btn-sm">Voir</a>
+							<a href="{{ path('app_back_category_edit', {'id': category.id}) }}" class="btn btn-secondary btn-sm">Modifier</a>
+							<a href="{{ path('app_back_category_delete', {'id': category.id}) }}" class="btn btn-danger btn-sm">Supprimer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+### Connexion
+POST http://localhost:8000/api/login_check
+Content-Type: application/json
+
+{
+    "username":"admin@playpal.fr",
+    "password":"playpal"
+}
+
+### token user : eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMjQ5NzAsImV4cCI6MTcxNDEyODU3MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidXNlckBvZmxpeC5mciJ9.ZFYBhsnV0f8x-yjgH63ayc4YafXLEf6ljRyJUTYuDWjsUxpaia33vQfxQT-ig4gLgTlAB59WLS4WMp8mM2kxyfFeZNMu2vQVhLrKaYh3nf5EMxuadVmGcVBZqCtpUgdHLrJNde3w-Ox0qpxdJblsfsqR0l7h6jcuhnKNAKD7OBr6udd1w2-1brivt8TjPi9iv7trQiV2D_5IpJAMAM41Lq4dgcWf2wp2e7fb0f5TCYWjbEKHYPzLwO_hFeXEc_uJECR7exWlfIAIoQF9rcV2gh6rxsWc2_L3z5g8VjmiNyeu24CmgD3_XYrAZh_0HHxpyYcbLWwg-xgJpN2ahgeJBA
+### token admin : eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTQxMzQ1NjgsImV4cCI6MTcxNDEzODE2OCwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJ1c2VybmFtZSI6ImFkbWluQG9mbGl4LmZyIn0.IzE_qgtZ10i0iO7VPibXeLAkh5wXIPnu8wjmKzrkAg7pYEQLk5VbR2hcmvr31-CFSxfk7ELuU_K6jzT-N6Q4vBzk-J36DYnCgLs_ziZODBsGght3FylyT4HrQGxfr-b4ILqflTSAIxphtXYEbojJUWfnVklTFVyEnzV79NWhtseAhkJxe9e3cKSut-RVb2UkAfS840I714lAEqHEKrjvmwqaqIg8d2BdbbGTRy34E2-FCoK5iV4CWOe78UGRfD3WgSo2yVMe2hpAkBS48RWMqwhoVIEx9WIzhgXPocuUfIaVU6__oIU5nXbRR60y9k0UHMiNtY30wATd6p8OQz8HFA
+
+
+
+### Ajouter une location
+GET http://localhost:8000/api/louer/add/42/36
+Content-Type: application/json
